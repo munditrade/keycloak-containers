@@ -20,6 +20,7 @@ USER root
 RUN microdnf update -y && microdnf install -y glibc-langpack-en gzip hostname java-11-openjdk-headless openssl tar which && microdnf clean all
 
 ADD tools /opt/jboss/tools
+ADD keycloak-sha1.jar /packages/keycloak-sha1.jar
 RUN /opt/jboss/tools/build-keycloak.sh
 
 USER 1000
