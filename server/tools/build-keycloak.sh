@@ -45,7 +45,14 @@ else
     cd /opt/jboss/
     curl -L $KEYCLOAK_DIST | tar zx
     mv /opt/jboss/keycloak-* /opt/jboss/keycloak
+    cp /packages/keycloak-sha1.jar /opt/jboss/keycloak/standalone/deployments/keycloak-sha1.jar
 fi
+
+#########################
+# Create Custom modules #
+#########################
+
+cp /packages/keycloak-sha1.jar /opt/jboss/keycloak/standalone/deployments/keycloak-sha1.jar
 
 #####################
 # Create DB modules #
